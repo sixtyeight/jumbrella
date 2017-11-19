@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>at.metalab</groupId>
-	<artifactId>artnet-mainroom</artifactId>
+	<artifactId>jumbrella-jar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Metalab Artnet UI for the main room</name>
 
@@ -56,6 +56,19 @@
 					<configuration>
 						<source>1.8</source>
 						<target>1.8</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<mainClass>at.metalab.artnet.RunMe</mainClass>
+							</manifest>
+						</archive>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
 					</configuration>
 				</plugin>
 			</plugins>

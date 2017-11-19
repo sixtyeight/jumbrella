@@ -17,7 +17,11 @@ public class RunMe {
 		final ResourceConfig application = new ResourceConfig().packages("at.metalab.artnet.jaxrs")
 				.register(JacksonFeature.class);
 
-		Server server = new Server(9999);
+		int port = 9999;
+		if (args.length > 0) {
+			port = Integer.valueOf(args[0]);
+		}
+		Server server = new Server(port);
 
 		// JSON processing
 		ServletHolder jerseyServlet = new ServletHolder(new ServletContainer(application));
